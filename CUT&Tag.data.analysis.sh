@@ -14,6 +14,7 @@ java -XX:ParallelGCThreads=4 -Xmx40g -jar picard.jar MarkDuplicates -I SampleNam
 #convert bam file to bigwig file
 bamCoverage -p 4 -bs 10 --effectiveGenomeSize 14600000000 --normalizeUsing RPKM --smoothLength 50 -b SampleName.rmdup.bam -o SampleName.bw
 
+
 #peak calling for CUT&Tag narrow peak
 macs2 callpeak -t SampleName.rmdup.bam -p 1e-3 -f BAMPE -g 14600000000 --keep-dup all -n SampleName
 
